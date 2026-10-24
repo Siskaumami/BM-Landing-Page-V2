@@ -1,0 +1,245 @@
+@media (max-width: 1024px) {
+  :root {
+    --section-y: 70px;
+  }
+
+  .benefit-inner,
+  .prod-grid,
+  .timeline-grid,
+  .event-grid,
+  .testimonial-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .split-grid,
+  .story-grid,
+  .location-grid,
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .contact-grid {
+    grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+    align-items: stretch;
+    gap: clamp(28px, 5vw, 56px);
+  }
+
+  .contact-direct {
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 360px;
+    gap: 14px;
+  }
+
+  .contact-direct .contact-pill {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .contact-form {
+    height: 100%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .hero-section {
+    min-height: auto;
+    padding-bottom: 72px;
+  }
+
+  .vm-wrapper {
+    margin-top: 60px;
+  }
+
+  .timeline-card:nth-child(odd):last-child,
+  .testimonial-card:nth-child(odd):last-child {
+    grid-column: 1 / -1;
+  }
+
+  .event-card:nth-child(odd):last-child {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-template-columns: minmax(180px, 0.42fr) minmax(0, 1fr);
+    column-gap: 22px;
+    align-items: center;
+  }
+
+  .event-card:nth-child(odd):last-child img {
+    grid-column: 1;
+    grid-row: 1 / span 4;
+    height: 100%;
+    min-height: 220px;
+    margin: 0;
+  }
+
+  .event-card:nth-child(odd):last-child > :not(img) {
+    grid-column: 2;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1.15fr 0.85fr 1fr;
+    grid-auto-rows: minmax(150px, auto);
+    gap: 14px;
+  }
+
+  .gallery-item {
+    min-height: 190px;
+  }
+
+  .gallery-item:nth-child(1) {
+    grid-row: span 2;
+  }
+
+  .gallery-item:nth-child(4) {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    width: min(100% - 24px, var(--site-max-width));
+  }
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  .nav-toggle {
+    display: block;
+  }
+
+  .site-nav {
+    position: fixed;
+    inset: var(--header-height) 0 auto 0;
+    padding: 14px 16px 20px;
+    background: rgba(5, 5, 5, 0.98);
+    border-bottom: 1px solid var(--color-border);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: opacity 180ms ease, transform 180ms ease, visibility 180ms ease;
+  }
+
+  .site-nav.is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .site-nav ul {
+    display: grid;
+    gap: 8px;
+  }
+
+  .site-nav a {
+    display: flex;
+    padding: 14px 16px;
+    border: 1px solid var(--color-border-soft);
+    border-radius: var(--radius-sm);
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  .hero-section {
+    min-height: 112vh;
+    padding-top: calc(var(--header-height) + 26px);
+  }
+
+  .vm-wrapper {
+    grid-template-columns: 1fr;
+    margin-top: 86px;
+    text-align: center;
+  }
+
+  .vm-divider {
+    width: 100%;
+    height: 1px;
+  }
+
+  .benefit-inner,
+  .prod-grid,
+  .timeline-grid,
+  .event-grid,
+  .testimonial-grid,
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-item,
+  .gallery-item:nth-child(1),
+  .gallery-item:nth-child(4) {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .gallery-item {
+    min-height: 220px;
+  }
+
+  .gallery-item:nth-child(1) {
+    aspect-ratio: 3 / 4;
+    min-height: 0;
+  }
+
+  .hero-actions,
+  .location-actions {
+    display: grid;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .story-image img,
+  .map-panel iframe {
+    min-height: 340px;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    column-gap: 26px;
+    row-gap: 30px;
+  }
+
+  .footer-grid > div:first-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 520px) {
+  .brand-logo {
+    width: 46px;
+    height: 46px;
+  }
+
+  .brand-copy strong,
+  .brand-link strong {
+    font-size: 0.82rem;
+  }
+
+  .brand-copy small,
+  .brand-link small {
+    font-size: 0.68rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2.7rem, 15vw, 4rem);
+  }
+
+  .hero-subtitle {
+    letter-spacing: 0.22em;
+  }
+
+  .contact-direct {
+    width: 100%;
+  }
+
+  .contact-pill {
+    width: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .vm-wrapper {
+    border-top: 0;
+    border-bottom: 0;
+  }
+}
